@@ -13,7 +13,6 @@ add_library(${LIB}
         GUI/TilingFrame.cpp GUI/TilingFrame.h
         RadiusConstraint.cpp RadiusConstraint.h
         Players/PorosityPlayer.cpp Players/PorosityPlayer.h
-        GUI/CoModThread.cpp GUI/CoModThread.h
         Listeners/TilingListener.cpp Listeners/TilingListener.h
         Players/NumBuildingPlayer.cpp Players/NumBuildingPlayer.h
         Strategies/ChangeBlockColorStrat.cpp Strategies/ChangeBlockColorStrat.h
@@ -28,7 +27,6 @@ add_library(${LIB}
         GUI/CoModWorker.cpp GUI/CoModWorker.h
         GUI/GUIListener.cpp GUI/GUIListener.h
         Invariants/CoModInvariant.cpp Invariants/CoModInvariant.h
-        GUI/DisplayTilingFrame.cpp GUI/DisplayTilingFrame.h
         segment.cpp segment.h
         redblacktree.h
         MultiSquareTilling.cpp MultiSquareTilling.h

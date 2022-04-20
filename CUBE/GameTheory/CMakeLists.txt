@@ -27,8 +27,8 @@ add_library(${LIB}
         GUI/CoModWorker.cpp GUI/CoModWorker.h
         GUI/GUIListener.cpp GUI/GUIListener.h
         Invariants/CoModInvariant.cpp Invariants/CoModInvariant.h
-        Segment.cpp Segment.h
-        RedBlackTree.h
+        ../DataStructures/Segment.cpp ../DataStructures/Segment.h
+        ../DataStructures/RedBlackTree.h
         MultiSquareTilling.cpp MultiSquareTilling.h
         HexagonalTiling.cpp HexagonalTiling.h
         TriangularTiling.cpp TriangularTiling.h)
@@ -42,6 +42,11 @@ target_link_libraries(${LIB} PUBLIC GameTheory3D)
 target_link_directories(${LIB} PUBLIC
         "${PROJECT_BINARY_DIR}/GameTheory/3D"
         "${PROJECT_SOURCE_DIR}/GameTheory/3D")
+
+target_link_libraries(${LIB} PUBLIC DataStructures)
+target_include_directories(${LIB} PUBLIC
+        "${PROJECT_BINARY_DIR}/DataStructures"
+        "${PROJECT_SOURCE_DIR}/DataStructures")
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_module)
 find_package(OpenMesh REQUIRED)

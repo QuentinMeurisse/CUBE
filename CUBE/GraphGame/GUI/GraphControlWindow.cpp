@@ -1,7 +1,7 @@
 #include "GraphControlWindow.h"
 #include "../GraphGame.h"
 #include "../Invariants/ColorNodeInvariant.h"
-#include "../GraphUtility.h"
+#include "../../DataStructures/GraphUtility.h"
 #include "../Players/MovePlayer.h"
 #include "IterativeBest.h"
 #include "../Players/VariableMovePlayer.h"

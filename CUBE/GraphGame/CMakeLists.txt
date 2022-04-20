@@ -5,16 +5,19 @@ add_library(${LIB}
         Strats/SwapColorStrat.cpp Strats/SwapColorStrat.h
         Invariants/ColorNodeInvariant.cpp Invariants/ColorNodeInvariant.h
         Players/MovePlayer.cpp Players/MovePlayer.h
-        GraphUtility.h
         GUI/GraphListener.cpp GUI/GraphListener.h
         GUI/GraphFrame.cpp GUI/GraphFrame.h
         Players/SwapPlayer.cpp Players/SwapPlayer.h
-        Graph.h
         Players/VariableMovePlayer.cpp Players/VariableMovePlayer.h
         GUI/GraphWindow.cpp GUI/GraphWindow.h
         GUI/GraphControlWindow.cpp GUI/GraphControlWindow.h
         GUI/GraphWorker.cpp GUI/GraphWorker.h)
 
+
+target_link_libraries(${LIB} PUBLIC DataStructures)
+target_include_directories(${LIB} PUBLIC
+        "${PROJECT_BINARY_DIR}/DataStructures"
+        "${PROJECT_SOURCE_DIR}/DataStructures")
 
 target_link_libraries(${LIB} PUBLIC GameCore)
 target_include_directories(${LIB} PUBLIC

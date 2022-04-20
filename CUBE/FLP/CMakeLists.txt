@@ -11,6 +11,10 @@ add_library(${LIB}
         GeneticGUIListener.cpp GeneticGUIListener.h
         GeneticWorker.cpp GeneticWorker.h FLPColors.h)
 
+target_link_libraries(${LIB} PUBLIC DataStructures)
+target_include_directories(${LIB} PUBLIC
+        "${PROJECT_BINARY_DIR}/DataStructures"
+        "${PROJECT_SOURCE_DIR}/DataStructures")
 
 target_link_libraries(${LIB} PUBLIC GraphGame)
 target_include_directories(${LIB} PUBLIC

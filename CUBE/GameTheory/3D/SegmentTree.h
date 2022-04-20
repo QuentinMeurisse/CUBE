@@ -1,8 +1,8 @@
 #ifndef CUBE_SEGMENTTREE_H
 #define CUBE_SEGMENTTREE_H
 
-#include "../RedBlackTree.h"
-#include "../Segment.h"
+#include "RedBlackTree.h"
+#include "Segment.h"
 
 template<class Comparator = std::less_equal<Segment>>
 class SegmentTree : public RedBlackTree<Segment, Comparator> {

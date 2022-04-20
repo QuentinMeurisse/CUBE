@@ -1,15 +1,14 @@
 set(LIB GAP)
 
 add_library(${LIB}
-        Matrix.h
         GAPConfig.h
         GAPWindow.cpp GAPConfig.h
-        GAPworker.cpp GAPworker.h)
+        GAPWorker.cpp GAPWorker.h GAPAlgo.h)
 
-target_link_libraries(${LIB} PUBLIC GraphGame)
+target_link_libraries(${LIB} PUBLIC DataStructures)
 target_include_directories(${LIB} PUBLIC
-        "${PROJECT_BINARY_DIR}/GraphGame"
-        "${PROJECT_SOURCE_DIR}/GraphGame")
+        "${PROJECT_BINARY_DIR}/DataStructures"
+        "${PROJECT_SOURCE_DIR}/DataStructures")
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 target_link_libraries(${LIB} PUBLIC Qt5::Widgets)

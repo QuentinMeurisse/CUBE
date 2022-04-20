@@ -3,7 +3,7 @@
 
 #include "../GroupOfCells.h"
 #include "../SquareTiling.h"
-#include "../Segment.h"
+#include "Segment.h"
 #include "SegmentTree.h"
 
 #include <string>

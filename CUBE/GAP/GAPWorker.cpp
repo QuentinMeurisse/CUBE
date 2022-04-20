@@ -1,7 +1,8 @@
-#include "GAPworker.h"
-#include "../DataStructures/GraphUtility.h"
-#include "../DataStructures/Graph.h"
+#include "GAPWorker.h"
+#include "GraphUtility.h"
+#include "Graph.h"
 #include "Matrix.h"
+#include "GAPAlgo.h"
 #include <utility>
 #include <vector>
 #include <experimental/filesystem>
@@ -122,7 +123,7 @@ void GAPWorker::process() {
 
     vector<int> binc = vector(blue.size(), 400);
     emit infoChanged(QString::fromStdString("Run gap"));
-    auto s = GraphUtility::gap<double>(w, p.getData(), binc, red_filtered.size(), blue.size());
+    auto s = GAPAlgo::gap<double>(w, p.getData(), binc, red_filtered.size(), blue.size());
 
     string save_txt_path = config.save_dir + fs::path::preferred_separator + "gap.txt";
     GraphUtility::writeGap(save_txt_path, s);

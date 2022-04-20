@@ -1,6 +1,6 @@
 #include "GAPWindow.h"
 #include "GAPConfig.h"
-#include "GAPworker.h"
+#include "GAPWorker.h"
 
 #include <QGroupBox>
 #include <QFileDialog>

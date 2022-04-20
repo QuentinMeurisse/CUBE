@@ -1,5 +1,5 @@
 #include "GraphGame.h"
-#include "GraphUtility.h"
+#include "../DataStructures/GraphUtility.h"
 
 #include <utility>
 #include <memory>

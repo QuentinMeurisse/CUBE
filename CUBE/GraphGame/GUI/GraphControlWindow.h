@@ -1,7 +1,7 @@
 #ifndef CUBE_GRAPHCONTROLWINDOW_H
 #define CUBE_GRAPHCONTROLWINDOW_H
 
-#include "../Graph.h"
+#include "../../DataStructures/Graph.h"
 #include "GraphWindow.h"
 
 #include <QMainWindow>

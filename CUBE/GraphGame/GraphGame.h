@@ -3,7 +3,7 @@
 
 #include "Game.h"
 #include "Invariant.h"
-#include "Graph.h"
+#include "../DataStructures/Graph.h"
 
 #include <vector>
 

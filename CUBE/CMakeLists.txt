@@ -10,6 +10,7 @@ add_subdirectory(GameTheory)
 add_subdirectory(GraphGame)
 add_subdirectory(FLP)
 add_subdirectory(GAP)
+add_subdirectory(DataStructures)
 add_subdirectory(lib/fmt)
 add_subdirectory(lib/nlohmann_json)
 

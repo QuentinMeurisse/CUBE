@@ -9,6 +9,7 @@ add_subdirectory(GameCore)
 add_subdirectory(GameTheory)
 add_subdirectory(GraphGame)
 add_subdirectory(FLP)
+add_subdirectory(GAP)
 add_subdirectory(lib/fmt)
 add_subdirectory(lib/nlohmann_json)
 
@@ -21,11 +22,13 @@ get_target_property(QtCore_location Qt5::Core LOCATION)
 target_link_libraries(CUBE PUBLIC GameTheory)
 target_link_libraries(CUBE PUBLIC GraphGame)
 target_link_libraries(CUBE PUBLIC FLP)
+target_link_libraries(CUBE PUBLIC GAP)
 target_include_directories(CUBE PUBLIC
         "${PROJECT_BINARY_DIR}"
         "${PROJECT_SOURCE_DIR}/GameTheory"
         "${PROJECT_SOURCE_DIR}/GameGraph"
-        "${PROJECT_SOURCE_DIR}/FLP")
+        "${PROJECT_SOURCE_DIR}/FLP"
+        "${PROJECT_SOURCE_DIR}/GAP")
 
 
 

@@ -5,7 +5,7 @@ add_library(${LIB}
         Strats/SwapColorStrat.cpp Strats/SwapColorStrat.h
         Invariants/ColorNodeInvariant.cpp Invariants/ColorNodeInvariant.h
         Players/MovePlayer.cpp Players/MovePlayer.h
-        GraphUtility.cpp GraphUtility.h
+        GraphUtility.h
         GUI/GraphListener.cpp GUI/GraphListener.h
         GUI/GraphFrame.cpp GUI/GraphFrame.h
         Players/SwapPlayer.cpp Players/SwapPlayer.h

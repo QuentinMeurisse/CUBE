@@ -18,7 +18,7 @@ GraphGame::GraphGame(shared_ptr<CoordGraph> g, bool load, string const &path) : 
         GraphUtility::writeMatrix(sp, path);
     }
     else
-        sp = GraphUtility::loadMatrix(path);
+        sp = GraphUtility::loadMatrix<double>(path);
 }
 
 double GraphGame::distance(unsigned int n1, unsigned int n2) {

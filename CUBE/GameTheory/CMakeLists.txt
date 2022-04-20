@@ -43,8 +43,11 @@ target_link_directories(${LIB} PUBLIC
         "${PROJECT_BINARY_DIR}/GameTheory/3D"
         "${PROJECT_SOURCE_DIR}/GameTheory/3D")
 
-target_link_libraries(${LIB} PUBLIC "/usr/local/lib/libOpenMeshCore.so")
-target_link_libraries(${LIB} PUBLIC "/usr/local/lib/libOpenMeshTools.so")
+list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_module)
+find_package(OpenMesh REQUIRED)
+include_directories(${OpenMesh_INCLUDE_DIRS})
+
+target_link_libraries(${LIB} PUBLIC ${OpenMesh_LIBS} OpenMeshCore OpenMeshTools)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 target_link_libraries(${LIB} PUBLIC Qt5::Widgets)

@@ -1,14 +1,13 @@
 #include <QApplication>
 
-#include "GUI/CoModFrame.h"
-#include "GraphGame/GUI/GraphControlWindow.h"
+#include "FLPWindow.h"
 
 using namespace std;
 
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    GraphControlWindow frame;
+    FLPWindow frame;
     frame.show();
     QApplication::exec();
     return 1;

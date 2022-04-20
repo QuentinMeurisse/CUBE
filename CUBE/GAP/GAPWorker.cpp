@@ -1,6 +1,6 @@
 #include "GAPworker.h"
-#include "GraphUtility.h"
-#include "Graph.h"
+#include "../DataStructures/GraphUtility.h"
+#include "../DataStructures/Graph.h"
 #include "Matrix.h"
 #include <utility>
 #include <vector>

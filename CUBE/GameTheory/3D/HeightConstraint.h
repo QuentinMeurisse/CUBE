@@ -1,8 +1,8 @@
 #ifndef CUBE_HEIGHTCONSTRAINT_H
 #define CUBE_HEIGHTCONSTRAINT_H
 
-#include "../segment.h"
-#include "group_of_cells3D.h"
+#include "../Segment.h"
+#include "GroupOfCells3D.h"
 
 #include <memory>
 

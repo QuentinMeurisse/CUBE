@@ -1,4 +1,4 @@
-#include "segment.h"
+#include "Segment.h"
 
 #include <iostream>
 #include <algorithm>

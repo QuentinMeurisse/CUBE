@@ -6,7 +6,7 @@
 #include <QPoint>
 #include <QMouseEvent>
 
-#include "../graph.h"
+#include "../Graph.h"
 
 class GraphFrame : public QWidget {
     Q_OBJECT

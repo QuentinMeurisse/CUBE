@@ -1,5 +1,5 @@
-#ifndef CUBE_GAP_WINDOW_H
-#define CUBE_GAP_WINDOW_H
+#ifndef CUBE_GAPWINDOW_H
+#define CUBE_GAPWINDOW_H
 
 #include <QMainWindow>
 #include <QLabel>
@@ -7,10 +7,10 @@
 #include <QLineEdit>
 #include <QCheckBox>
 #include <QString>
-class GapWindow : public QMainWindow {
+class GAPWindow : public QMainWindow {
     Q_OBJECT
 public:
-    explicit GapWindow(QWidget *parent = nullptr);
+    explicit GAPWindow(QWidget *parent = nullptr);
 
 private slots:
     void loadGraph();
@@ -42,4 +42,4 @@ private:
 };
 
 
-#endif //CUBE_GAP_WINDOW_H
+#endif //CUBE_GAPWINDOW_H

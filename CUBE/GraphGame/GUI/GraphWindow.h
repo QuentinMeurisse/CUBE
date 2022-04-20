@@ -2,7 +2,7 @@
 #define CUBE_GRAPHWINDOW_H
 
 #include "IterativeGameplay.h"
-#include "../graph.h"
+#include "../Graph.h"
 #include "GraphFrame.h"
 
 #include <QMainWindow>

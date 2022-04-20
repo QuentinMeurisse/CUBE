@@ -3,7 +3,7 @@
 
 #include <string>
 
-struct Config{
+struct GAPConfig{
     std::string graph_path;
     std::string save_dir;
     std::string weight_key;

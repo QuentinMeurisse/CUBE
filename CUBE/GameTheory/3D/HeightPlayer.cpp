@@ -1,7 +1,7 @@
 #include "HeightPlayer.h"
 #include "../UrbanBlockGame.h"
 #include "Building3DInvariant.h"
-#include "group_of_cells3D.h"
+#include "GroupOfCells3D.h"
 #include "IncreaseHeightStrat.h"
 
 #include <memory>

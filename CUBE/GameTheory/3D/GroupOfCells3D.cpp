@@ -1,4 +1,4 @@
-#include "group_of_cells3D.h"
+#include "GroupOfCells3D.h"
 
 #include <nlohmann/json.hpp>
 #include <fstream>

@@ -1,14 +1,14 @@
-#include "gapworker.h"
+#include "GAPworker.h"
 #include "GraphUtility.h"
-#include "graph.h"
-#include "matrix.h"
+#include "Graph.h"
+#include "Matrix.h"
 #include <utility>
 #include <vector>
 #include <experimental/filesystem>
 #include <sstream>
 using namespace std;
 namespace fs = std::experimental::filesystem;
-GAPWorker::GAPWorker(Config c, QObject *parent) : config(std::move(c)), QObject(parent) {
+GAPWorker::GAPWorker(GAPConfig c, QObject *parent) : config(std::move(c)), QObject(parent) {
 
 }
 

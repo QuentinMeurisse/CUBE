@@ -9,7 +9,7 @@ add_library(${LIB}
         GUI/GraphListener.cpp GUI/GraphListener.h
         GUI/GraphFrame.cpp GUI/GraphFrame.h
         Players/SwapPlayer.cpp Players/SwapPlayer.h
-        graph.h
+        Graph.h
         Players/VariableMovePlayer.cpp Players/VariableMovePlayer.h
         GUI/GraphWindow.cpp GUI/GraphWindow.h
         GUI/GraphControlWindow.cpp GUI/GraphControlWindow.h

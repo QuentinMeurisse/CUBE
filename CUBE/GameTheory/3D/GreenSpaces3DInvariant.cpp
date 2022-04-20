@@ -1,5 +1,5 @@
 #include "GreenSpaces3DInvariant.h"
-#include "group_of_cells3D.h"
+#include "GroupOfCells3D.h"
 
 
 using namespace std;

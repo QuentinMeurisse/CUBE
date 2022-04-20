@@ -1,6 +1,6 @@
 set(LIB GameTheory3D)
-set(SOURCES group_of_cells3D.cpp group_of_cells3D.h
-            segmenttree.h
+set(SOURCES GroupOfCells3D.cpp GroupOfCells3D.h
+        SegmentTree.h
             CoMod3DInvariant.cpp CoMod3DInvariant.h
             Building3DInvariant.cpp Building3DInvariant.h
             GreenSpaces3DInvariant.cpp GreenSpaces3DInvariant.h

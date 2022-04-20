@@ -2,7 +2,7 @@
 #define CUBE_GENETICGUILISTENER_H
 
 #include "GeneticProblem.h"
-#include "graph.h"
+#include "Graph.h"
 
 #include <QtCore/QObject>
 #include <memory>

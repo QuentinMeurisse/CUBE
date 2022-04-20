@@ -1,7 +1,7 @@
 #ifndef CUBE_TILING_H
 #define CUBE_TILING_H
 
-#include "segment.h"
+#include "Segment.h"
 
 #include <string>
 #include <memory>

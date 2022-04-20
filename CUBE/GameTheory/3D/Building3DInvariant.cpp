@@ -1,6 +1,6 @@
 #include "Building3DInvariant.h"
 #include "../SquareTiling.h"
-#include "group_of_cells3D.h"
+#include "GroupOfCells3D.h"
 
 #include <memory>
 

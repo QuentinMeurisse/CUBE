@@ -1,6 +1,6 @@
-#include "gap_window.h"
-#include "gap_config.h"
-#include "gapworker.h"
+#include "GAPWindow.h"
+#include "GAPConfig.h"
+#include "GAPworker.h"
 
 #include <QGroupBox>
 #include <QFileDialog>
@@ -16,7 +16,7 @@
 
 using namespace std;
 
-GapWindow::GapWindow(QWidget *parent) : QMainWindow(parent) {
+GAPWindow::GAPWindow(QWidget *parent) : QMainWindow(parent) {
     setWindowTitle("GAP");
     resize(1000, 800);
 
@@ -123,17 +123,17 @@ GapWindow::GapWindow(QWidget *parent) : QMainWindow(parent) {
     start_button->move(600, 600);
     start_button->setFixedSize(200, 50);
 
-    connect(load_graph_button, &QPushButton::clicked, this, &GapWindow::loadGraph);
-    connect(select_save_dir_button, &QPushButton::clicked, this, &GapWindow::selectSaveDir);
-    connect(time_used, &QCheckBox::stateChanged, this, &GapWindow::updateTimeUse);
-    connect(random_used, &QCheckBox::stateChanged, this, &GapWindow::updateRandomUse);
-    connect(start_button, &QPushButton::clicked, this, &GapWindow::startComputation);
+    connect(load_graph_button, &QPushButton::clicked, this, &GAPWindow::loadGraph);
+    connect(select_save_dir_button, &QPushButton::clicked, this, &GAPWindow::selectSaveDir);
+    connect(time_used, &QCheckBox::stateChanged, this, &GAPWindow::updateTimeUse);
+    connect(random_used, &QCheckBox::stateChanged, this, &GAPWindow::updateRandomUse);
+    connect(start_button, &QPushButton::clicked, this, &GAPWindow::startComputation);
 
 
 
 }
 
-void GapWindow::loadGraph() {
+void GAPWindow::loadGraph() {
     QString file_name = QFileDialog::getOpenFileName(this,
                                                      tr("Choose graph file"),
                                                      "",
@@ -143,7 +143,7 @@ void GapWindow::loadGraph() {
     load_graph_line->setText(file_name);
 }
 
-void GapWindow::selectSaveDir() {
+void GAPWindow::selectSaveDir() {
     QString save_dir = QFileDialog::getExistingDirectory(this,
                                                          tr("Choose directory"),
                                                          "",
@@ -151,24 +151,24 @@ void GapWindow::selectSaveDir() {
     select_save_dir_line->setText(save_dir);
 }
 
-void GapWindow::updateTimeUse(int state) {
+void GAPWindow::updateTimeUse(int state) {
     time_key->setEnabled(state == Qt::Checked);
     start_time->setEnabled(state == Qt::Checked);
     max_time->setEnabled(state == Qt::Checked);
     num_time_categories->setEnabled(state == Qt::Checked);
 }
 
-void GapWindow::updateRandomUse(int state) {
+void GAPWindow::updateRandomUse(int state) {
     max_value_for_random->setEnabled(state == Qt::Checked);
 }
 
-void GapWindow::updateText(const QString& txt) {
+void GAPWindow::updateText(const QString& txt) {
     result_label->setText(txt);
 }
 
-void GapWindow::startComputation() {
+void GAPWindow::startComputation() {
     QString error_details;
-    Config config;
+    GAPConfig config;
     config.num_criteria++;
     QString load_graph_str = load_graph_line->text();
     if (load_graph_str.isEmpty())
@@ -233,9 +233,9 @@ void GapWindow::startComputation() {
         auto* worker = new GAPWorker(config);
         worker->moveToThread(q_thread);
         connect(q_thread,&QThread::started, worker, &GAPWorker::process);
-        connect(worker, &GAPWorker::infoChanged, this, &GapWindow::updateText);
+        connect(worker, &GAPWorker::infoChanged, this, &GAPWindow::updateText);
         connect(worker, &GAPWorker::finished, q_thread, &QThread::quit);
-        connect(worker, &GAPWorker::finished, this, &GapWindow::enableStart);
+        connect(worker, &GAPWorker::finished, this, &GAPWindow::enableStart);
         connect(worker, &GAPWorker::finished, worker, &GAPWorker::deleteLater);
         connect(q_thread, &QThread::finished, q_thread, &QThread::deleteLater);
         q_thread->start();
@@ -252,7 +252,7 @@ void GapWindow::startComputation() {
 
 }
 
-void GapWindow::enableStart() {
+void GAPWindow::enableStart() {
     start_button->setEnabled(true);
 }
 

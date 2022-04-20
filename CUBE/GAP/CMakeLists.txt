@@ -1,10 +1,10 @@
 set(LIB GAP)
 
 add_library(${LIB}
-            matrix.h
-            gap_config.h
-            gap_window.cpp gap_config.h
-            gapworker.cpp gapworker.h)
+        Matrix.h
+        GAPConfig.h
+        GAPWindow.cpp GAPConfig.h
+        GAPworker.cpp GAPworker.h)
 
 target_link_libraries(${LIB} PUBLIC GraphGame)
 target_include_directories(${LIB} PUBLIC

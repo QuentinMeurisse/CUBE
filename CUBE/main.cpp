@@ -1,12 +1,12 @@
 #include <QApplication>
 
-#include "gap_window.h"
+#include "GAPWindow.h"
 using namespace std;
 
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    GapWindow frame;
+    GAPWindow frame;
     frame.show();
     QApplication::exec();
     return 1;

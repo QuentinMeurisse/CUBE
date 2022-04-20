@@ -4,7 +4,7 @@
 #include <chrono>
 
 
-#include "graph.h"
+#include "Graph.h"
 #include "GeneticFLP.h"
 #include "GeneticDisplay.h"
 

@@ -2,7 +2,7 @@
 #define CUBE_FLPWINDOW_H
 
 #include "GUI/GraphFrame.h"
-#include "graph.h"
+#include "Graph.h"
 #include "FLPSettingsWindow.h"
 
 #include <QMainWindow>

@@ -1,10 +1,10 @@
-#ifndef CUBE_GROUP_OF_CELLS3D_H
-#define CUBE_GROUP_OF_CELLS3D_H
+#ifndef CUBE_GROUPOFCELLS3D_H
+#define CUBE_GROUPOFCELLS3D_H
 
 #include "../GroupOfCells.h"
 #include "../SquareTiling.h"
-#include "../segment.h"
-#include "segmenttree.h"
+#include "../Segment.h"
+#include "SegmentTree.h"
 
 #include <string>
 
@@ -56,4 +56,4 @@ private:
 };
 
 
-#endif //CUBE_GROUP_OF_CELLS3D_H
+#endif //CUBE_GROUPOFCELLS3D_H

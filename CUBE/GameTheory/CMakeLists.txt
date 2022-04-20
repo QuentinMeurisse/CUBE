@@ -27,8 +27,8 @@ add_library(${LIB}
         GUI/CoModWorker.cpp GUI/CoModWorker.h
         GUI/GUIListener.cpp GUI/GUIListener.h
         Invariants/CoModInvariant.cpp Invariants/CoModInvariant.h
-        segment.cpp segment.h
-        redblacktree.h
+        Segment.cpp Segment.h
+        RedBlackTree.h
         MultiSquareTilling.cpp MultiSquareTilling.h
         HexagonalTiling.cpp HexagonalTiling.h
         TriangularTiling.cpp TriangularTiling.h)

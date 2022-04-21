@@ -19,6 +19,8 @@
 #include <QtWidgets/QLabel>
 #include <QMenu>
 #include <QAction>
+#include <QCloseEvent>
+
 class GameFrame : public QMainWindow{
     Q_OBJECT
 public:
@@ -57,8 +59,7 @@ private slots:
 
 signals:
     void finished();
-
-
+    void closed();
 private:
     TilingFrame* tilingFrame;
     QRadioButton* deterministGameplay;
@@ -113,6 +114,9 @@ private:
     int x_pos = 0;
     int y_pos = 0;
     int zoom_level = 10;
+
+    void closeEvent(QCloseEvent *bar);
+
 
 
 

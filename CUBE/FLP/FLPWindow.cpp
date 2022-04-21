@@ -521,6 +521,11 @@ void FLPWindow::addFacilities() {
     }
 }
 
+void FLPWindow::closeEvent(QCloseEvent *bar) {
+    emit closed();
+    bar->accept();
+}
+
 Circle::Circle(std::string c, QWidget *parent): color(std::move(c)), QWidget(parent) {
     setMinimumSize(20, 20);
 }

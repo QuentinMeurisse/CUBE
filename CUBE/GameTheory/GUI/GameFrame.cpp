@@ -789,4 +789,9 @@ void GameFrame::save3DConfig() {
 
 }
 
+void GameFrame::closeEvent(QCloseEvent *bar) {
+    emit closed();
+    bar->accept();
+}
+
 

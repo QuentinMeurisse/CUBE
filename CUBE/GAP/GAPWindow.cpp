@@ -256,4 +256,9 @@ void GAPWindow::enableStart() {
     start_button->setEnabled(true);
 }
 
+void GAPWindow::closeEvent(QCloseEvent *bar) {
+    emit closed();
+    bar->accept();
+}
+
 

@@ -7,6 +7,8 @@
 #include <QLineEdit>
 #include <QCheckBox>
 #include <QString>
+#include <QCloseEvent>
+
 class GAPWindow : public QMainWindow {
     Q_OBJECT
 public:
@@ -20,6 +22,9 @@ private slots:
     void updateText(const QString& txt);
     void startComputation();
     void enableStart();
+
+signals:
+    void closed();
 
 private:
     QLabel* result_label;
@@ -39,6 +44,7 @@ private:
     QLineEdit* max_value_for_random;
     QPushButton* start_button;
 
+    void closeEvent(QCloseEvent *bar);
 };
 
 

@@ -11,6 +11,7 @@
 #include <memory>
 #include <QKeyEvent>
 #include <QCheckBox>
+#include <QCloseEvent>
 
 
 class GraphControlWindow : public QMainWindow{
@@ -37,6 +38,9 @@ protected slots:
     void useMemoryAction(int state);
     void useVariableAction(int state);
 
+signals:
+    void closed();
+
 private:
     QTableWidget* playersTable;
     QPushButton* startButton;
@@ -62,6 +66,8 @@ private:
 
     std::shared_ptr<CoordGraph> g;
     GraphWindow* gw;
+
+    void closeEvent(QCloseEvent *bar);
 
 
 };

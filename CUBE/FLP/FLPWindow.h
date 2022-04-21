@@ -10,6 +10,7 @@
 #include <QAction>
 #include <QProgressBar>
 #include <QLabel>
+#include <QCloseEvent>
 #include <memory>
 #include <string>
 
@@ -38,6 +39,9 @@ protected slots:
     void moveRight();
     void addCustomers();
     void addFacilities();
+
+signals:
+    void closed();
 
 private:
     GraphFrame* graphFrame;
@@ -84,6 +88,8 @@ private:
     std::string graphFile;
     std::vector<double> facilitiesCost;
     std::vector<std::vector<double>> transportCost;
+
+    void closeEvent(QCloseEvent *bar);
 
 
 };

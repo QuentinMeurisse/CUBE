@@ -502,4 +502,9 @@ void GraphControlWindow::useVariableAction(int state) {
     variableLine->setEnabled(state == Qt::Checked);
 }
 
+void GraphControlWindow::closeEvent(QCloseEvent *bar) {
+    emit closed();
+    bar->accept();
+}
+
 

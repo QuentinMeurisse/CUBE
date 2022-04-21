@@ -1,14 +1,14 @@
-#ifndef CUBE_COMODWORKER_H
-#define CUBE_COMODWORKER_H
+#ifndef CUBE_GAMEWORKER_H
+#define CUBE_GAMEWORKER_H
 
 #include "IterativeGameplay.h"
 
 #include <QObject>
 
-class CoModWorker : public QObject {
+class GameWorker : public QObject {
     Q_OBJECT
 public:
-    explicit CoModWorker(std::shared_ptr<IterativeGameplay> gameplay, QObject *parent = nullptr);
+    explicit GameWorker(std::shared_ptr<IterativeGameplay> gameplay, QObject *parent = nullptr);
 
 public slots:
     void process();
@@ -23,4 +23,4 @@ private:
 };
 
 
-#endif //CUBE_COMODWORKER_H
+#endif //CUBE_GAMEWORKER_H

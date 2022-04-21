@@ -1,5 +1,5 @@
-#ifndef CUBE_COMODFRAME_H
-#define CUBE_COMODFRAME_H
+#ifndef CUBE_GAMEFRAME_H
+#define CUBE_GAMEFRAME_H
 
 #include "../Tiling.h"
 #include "TilingFrame.h"
@@ -19,10 +19,10 @@
 #include <QtWidgets/QLabel>
 #include <QMenu>
 #include <QAction>
-class CoModFrame : public QMainWindow{
+class GameFrame : public QMainWindow{
     Q_OBJECT
 public:
-    explicit CoModFrame(QWidget *parent = nullptr);
+    explicit GameFrame(QWidget *parent = nullptr);
 
 private:
     void initGameplay(std::shared_ptr<UrbanBlockGame> const& game);
@@ -120,4 +120,4 @@ private:
 
 
 
-#endif //CUBE_COMODFRAME_H
+#endif //CUBE_GAMEFRAME_H

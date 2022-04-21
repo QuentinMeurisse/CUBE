@@ -37,7 +37,7 @@ optional<shared_ptr<GroupOfCells>> UrbanBlockGame::getGroupOfCells(const unsigne
     string color = t->getColor(k);
     char key = color == "#f00000" ? 'b' : color == "#00f000" ? 'g' : 0;
     if (key != 0) {
-        shared_ptr<CoModInvariant> inv = dynamic_pointer_cast<CoModInvariant>(invariants[key]);
+        shared_ptr<UbranBlockGameInvariant> inv = dynamic_pointer_cast<UbranBlockGameInvariant>(invariants[key]);
         unsigned int component = t->getComponent(k);
         map<int, shared_ptr<GroupOfCells>> c = inv->getComponents();
         return c[component]; // If a cell isn't white, there exist a component that contains it.
@@ -50,7 +50,7 @@ optional<shared_ptr<GroupOfCells>> UrbanBlockGame::getGroupOfCells(const unsigne
 bool UrbanBlockGame::doTheComponentExist(const unsigned int &idnum, string const& color) {
     char key =  color == "#f00000" ? 'b' : color == "#00f000" ? 'g' : 0;
     if (key != 0){
-        shared_ptr<CoModInvariant> inv = dynamic_pointer_cast<CoModInvariant>(invariants[key]);
+        shared_ptr<UbranBlockGameInvariant> inv = dynamic_pointer_cast<UbranBlockGameInvariant>(invariants[key]);
         map<int, shared_ptr<GroupOfCells>> c = inv->getComponents();
         return c.find(idnum) != c.end();
     }
@@ -65,7 +65,7 @@ const map<char, std::shared_ptr<Invariant>> &UrbanBlockGame::getInvariants() con
 vector<int> UrbanBlockGame::componentsIds(const string& color) {
     vector<int> ids;
     char key = color == "#f00000" ? 'b' : 'g';
-    shared_ptr<CoModInvariant> inv = dynamic_pointer_cast<CoModInvariant>(invariants[key]);
+    shared_ptr<UbranBlockGameInvariant> inv = dynamic_pointer_cast<UbranBlockGameInvariant>(invariants[key]);
     map<int, shared_ptr<GroupOfCells>> c = inv->getComponents();
     ids.reserve(c.size()); // Initialize the size of the vector
     for(const auto& x : c)
@@ -76,7 +76,7 @@ vector<int> UrbanBlockGame::componentsIds(const string& color) {
 
 std::shared_ptr<GroupOfCells> UrbanBlockGame::componentFromId(int idnum, const std::string& color) {
     char key = color == "#f00000" ? 'b' : 'g';
-    shared_ptr<CoModInvariant> inv = dynamic_pointer_cast<CoModInvariant>(invariants[key]);
+    shared_ptr<UbranBlockGameInvariant> inv = dynamic_pointer_cast<UbranBlockGameInvariant>(invariants[key]);
     map<int, shared_ptr<GroupOfCells>> c  = inv->getComponents();
     return c[idnum];
 }

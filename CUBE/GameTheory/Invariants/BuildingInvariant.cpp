@@ -6,5 +6,5 @@
 
 using namespace std;
 
-BuildingInvariant::BuildingInvariant(const shared_ptr<UrbanBlockGame> &g) : CoModInvariant(g, "#f00000") {}
+BuildingInvariant::BuildingInvariant(const shared_ptr<UrbanBlockGame> &g) : UbranBlockGameInvariant(g, "#f00000") {}
 

@@ -1,4 +1,4 @@
-#include "CoModInvariant.h"
+#include "UbranBlockGameInvariant.h"
 #include "../Strategies/ChangeBlockColorStrat.h"
 
 #include <utility>
@@ -6,10 +6,10 @@
 
 using namespace std;
 
-CoModInvariant::CoModInvariant(const shared_ptr<UrbanBlockGame> &g, string color) : Invariant(g), color(move(color)) {}
+UbranBlockGameInvariant::UbranBlockGameInvariant(const shared_ptr<UrbanBlockGame> &g, string color) : Invariant(g), color(move(color)) {}
 
 
-void CoModInvariant::update(const std::shared_ptr<Strategy> &strat) {
+void UbranBlockGameInvariant::update(const std::shared_ptr<Strategy> &strat) {
     shared_ptr<UrbanBlockGame> ubg = dynamic_pointer_cast<UrbanBlockGame>(g);
     shared_ptr<Tiling> t = ubg->getT();
     shared_ptr<ChangeColorStrat> s = dynamic_pointer_cast<ChangeColorStrat>(strat);
@@ -57,31 +57,31 @@ void CoModInvariant::update(const std::shared_ptr<Strategy> &strat) {
 
 }
 
-void CoModInvariant::undo(const std::shared_ptr<Strategy> &strat) {
+void UbranBlockGameInvariant::undo(const std::shared_ptr<Strategy> &strat) {
     shared_ptr<ChangeColorStrat> s = dynamic_pointer_cast<ChangeColorStrat>(strat);
     shared_ptr<ChangeColorStrat> reversed = make_shared<ChangeColorStrat>(s->reverse());
     update(reversed);
 }
 
 
-double CoModInvariant::getArea() const {
+double UbranBlockGameInvariant::getArea() const {
     return area;
 }
 
-double CoModInvariant::getPerimeter() const {
+double UbranBlockGameInvariant::getPerimeter() const {
     return perimeter;
 }
 
-unsigned int CoModInvariant::getNumComponents() const {
+unsigned int UbranBlockGameInvariant::getNumComponents() const {
     return numComponents;
 }
 
-const map<int, std::shared_ptr<GroupOfCells>> &CoModInvariant::getComponents() const {
+const map<int, std::shared_ptr<GroupOfCells>> &UbranBlockGameInvariant::getComponents() const {
     return components;
 }
 
 std::shared_ptr<GroupOfCells>
-CoModInvariant::createGroupOfCells(const shared_ptr<Tiling> &tiling, unsigned int idnum, const string &c) {
+UbranBlockGameInvariant::createGroupOfCells(const shared_ptr<Tiling> &tiling, unsigned int idnum, const string &c) {
     shared_ptr<GroupOfCells> goc = make_shared<GroupOfCells>(tiling, idnum, c);
     return goc;
 }

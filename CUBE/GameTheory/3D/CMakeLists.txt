@@ -1,7 +1,7 @@
 set(LIB GameTheory3D)
 set(SOURCES GroupOfCells3D.cpp GroupOfCells3D.h
             SegmentTree.h
-            CoMod3DInvariant.cpp CoMod3DInvariant.h
+        UbranBlockGame3DInvariant.cpp UbranBlockGame3DInvariant.h
             Building3DInvariant.cpp Building3DInvariant.h
             GreenSpaces3DInvariant.cpp GreenSpaces3DInvariant.h
             HeightConstraint.cpp HeightConstraint.h

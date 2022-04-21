@@ -1,5 +1,5 @@
-#ifndef CUBE_COMODINVARIANT_H
-#define CUBE_COMODINVARIANT_H
+#ifndef CUBE_UBRANBLOCKGAMEINVARIANT_H
+#define CUBE_UBRANBLOCKGAMEINVARIANT_H
 
 
 #include "Invariant.h"
@@ -10,11 +10,11 @@
 #include <map>
 #include <memory>
 
-class CoModInvariant : public Invariant {
+class UbranBlockGameInvariant : public Invariant {
 
 
 public:
-    CoModInvariant(const std::shared_ptr<UrbanBlockGame> &g, std::string color);
+    UbranBlockGameInvariant(const std::shared_ptr<UrbanBlockGame> &g, std::string color);
 
 
     void update(const std::shared_ptr<Strategy> &strat) override;
@@ -41,4 +41,4 @@ protected:
 };
 
 
-#endif //CUBE_COMODINVARIANT_H
+#endif //CUBE_UBRANBLOCKGAMEINVARIANT_H

@@ -1,4 +1,4 @@
-#include "CoModFrame.h"
+#include "GameFrame.h"
 #include "../SquareTiling.h"
 #include "../HexagonalTiling.h"
 #include "../TriangularTiling.h"
@@ -15,7 +15,7 @@
 #include "../Players/NumGreenSpacesPlayer.h"
 #include "../GameTheoryUtility.h"
 #include "../Listeners/TilingListener.h"
-#include "CoModWorker.h"
+#include "GameWorker.h"
 #include "GUIListener.h"
 #include "../3D/Building3DInvariant.h"
 #include "../3D/GreenSpaces3DInvariant.h"
@@ -42,8 +42,8 @@
 
 using namespace std;
 
-CoModFrame::CoModFrame(QWidget *parent) : QMainWindow(parent){
-    setWindowTitle("CoMod");
+GameFrame::GameFrame(QWidget *parent) : QMainWindow(parent){
+    setWindowTitle("Game Theory");
     resize(1920, 1000);
     auto* centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
@@ -308,7 +308,7 @@ CoModFrame::CoModFrame(QWidget *parent) : QMainWindow(parent){
 
 }
 
-void CoModFrame::initTiling() {
+void GameFrame::initTiling() {
     QString wstr = tilingW->text();
     QString hstr = tilingH->text();
     QString astr = tilingA->text();
@@ -351,26 +351,26 @@ void CoModFrame::initTiling() {
     }
 }
 
-void CoModFrame::updateNumBuildings(int state){
+void GameFrame::updateNumBuildings(int state){
     minBuildingLine->setEnabled(state == Qt::Checked);
     maxBuildingLine->setEnabled(state == Qt::Checked);
 }
 
-void CoModFrame::updateBuildingPerim(int state){
+void GameFrame::updateBuildingPerim(int state){
     minPerimLine->setEnabled(state == Qt::Checked);
     maxPerimLine->setEnabled(state == Qt::Checked);
 }
 
-void CoModFrame::updateGreenSpacesrate(int state){
+void GameFrame::updateGreenSpacesrate(int state){
     greenSpaceRateLine->setEnabled(state == Qt::Checked);
 }
 
-void CoModFrame::updateNumGreenSpaces(int state){
+void GameFrame::updateNumGreenSpaces(int state){
     minGreenSpacesLine->setEnabled(state == Qt::Checked);
     maxGreenSpacesLine->setEnabled(state == Qt::Checked);
 }
 
-void CoModFrame::active3DMode(int state) {
+void GameFrame::active3DMode(int state) {
     floorHeightLine->setEnabled(state == Qt::Checked);
     angleLine->setEnabled(state == Qt::Checked);
     save3DButton->setEnabled(state == Qt::Checked);
@@ -382,7 +382,7 @@ void CoModFrame::active3DMode(int state) {
         initTiling();
 }
 
-void CoModFrame::initGame() {
+void GameFrame::initGame() {
     shared_ptr<UrbanBlockGame> game = make_shared<UrbanBlockGame>(tilingFrame->getT());
 
     if (use3D->isChecked()){
@@ -409,13 +409,13 @@ void CoModFrame::initGame() {
 
 }
 
-void CoModFrame::restartGameplay() {
+void GameFrame::restartGameplay() {
     shared_ptr<Game> game = gameplay->getGame();
     shared_ptr<UrbanBlockGame> ubg = dynamic_pointer_cast<UrbanBlockGame>(game);
     initGameplay(ubg);
 }
 
-void CoModFrame::enableAll() {
+void GameFrame::enableAll() {
     for(auto* widget : findChildren<QWidget *>())
         widget->setEnabled(true);
     startAndRestartButtons->setCurrentIndex(1);
@@ -434,7 +434,7 @@ void CoModFrame::enableAll() {
 
 }
 
-void CoModFrame::resetSolution() {
+void GameFrame::resetSolution() {
     shared_ptr<Tiling> t = tilingFrame->getT();
     for (int i = 0; i < t->numCells(); ++i) {
         t->setColor(i, "#ffffff");
@@ -444,12 +444,12 @@ void CoModFrame::resetSolution() {
     startAndRestartButtons->setCurrentIndex(0);
 }
 
-void CoModFrame::showMaxTimeField(bool state) {
+void GameFrame::showMaxTimeField(bool state) {
     maxTimeWidget->setHidden(not state);
 }
 
 
-void CoModFrame::initGameplay(const shared_ptr<UrbanBlockGame> &game) {
+void GameFrame::initGameplay(const shared_ptr<UrbanBlockGame> &game) {
     QString errorDetails;
     if (not tilingFrame->getT())
         errorDetails.append("- The tiling is not set.\n");
@@ -501,7 +501,7 @@ void CoModFrame::initGameplay(const shared_ptr<UrbanBlockGame> &game) {
         resetSolutionButton->setEnabled(false);
 
         auto* qThread = new QThread;
-        auto* worker = new CoModWorker(gameplay);
+        auto* worker = new GameWorker(gameplay);
         worker->moveToThread(qThread);
         connect(stopButton, SIGNAL(clicked()), worker, SLOT(stop()), Qt::DirectConnection);
         connect(qThread, SIGNAL(started()), worker, SLOT(process()));
@@ -521,7 +521,7 @@ void CoModFrame::initGameplay(const shared_ptr<UrbanBlockGame> &game) {
     }
 }
 
-void CoModFrame::loadLock() {
+void GameFrame::loadLock() {
     QString file_name = QFileDialog::getOpenFileName(this,
                                                      tr("Choose locked cells file"),
                                                      "",
@@ -536,7 +536,7 @@ void CoModFrame::loadLock() {
     lockedCellsLine->setText(file_name);
 }
 
-void CoModFrame::lockCells() {
+void GameFrame::lockCells() {
     QString errorDetails;
     QString path = lockedCellsLine->text();
     if (path.isEmpty()){
@@ -567,7 +567,7 @@ void CoModFrame::lockCells() {
     }
 }
 
-void CoModFrame::zoomIn() {
+void GameFrame::zoomIn() {
     if (zoom_level < 300){
         zoom_level += 2;
         tilingFrame->setDilatation(zoom_level);
@@ -575,7 +575,7 @@ void CoModFrame::zoomIn() {
     }
 }
 
-void CoModFrame::zoomOut() {
+void GameFrame::zoomOut() {
     if (zoom_level > 2){
         zoom_level -= 2;
         tilingFrame->setDilatation(zoom_level);
@@ -583,31 +583,31 @@ void CoModFrame::zoomOut() {
     }
 }
 
-void CoModFrame::moveUp() {
+void GameFrame::moveUp() {
     y_pos -= 5;
     tilingFrame->setYtranslation(y_pos);
     tilingFrame->repaint();
 }
 
-void CoModFrame::moveDown() {
+void GameFrame::moveDown() {
     y_pos += 5;
     tilingFrame->setYtranslation(y_pos);
     tilingFrame->repaint();
 }
 
-void CoModFrame::moveLeft() {
+void GameFrame::moveLeft() {
     x_pos -= 5;
     tilingFrame->setXtranslation(x_pos);
     tilingFrame->repaint();
 }
 
-void CoModFrame::moveRight() {
+void GameFrame::moveRight() {
     x_pos += 5;
     tilingFrame->setXtranslation(x_pos);
     tilingFrame->repaint();
 }
 
-std::vector<std::shared_ptr<Player>> CoModFrame::init2DPlayers(uint const &rb, uint const &rg) {
+std::vector<std::shared_ptr<Player>> GameFrame::init2DPlayers(uint const &rb, uint const &rg) {
     QString errorDetails;
     vector<shared_ptr<Player>> players;
 
@@ -671,7 +671,7 @@ std::vector<std::shared_ptr<Player>> CoModFrame::init2DPlayers(uint const &rb, u
     }
 }
 
-std::vector<std::shared_ptr<Player>> CoModFrame::init3DPlayers(const uint &rb, const uint &rg) {
+std::vector<std::shared_ptr<Player>> GameFrame::init3DPlayers(const uint &rb, const uint &rg) {
     QString errorDetails;
     vector<shared_ptr<Player>> players;
 
@@ -752,7 +752,7 @@ std::vector<std::shared_ptr<Player>> CoModFrame::init3DPlayers(const uint &rb, c
     }
 }
 
-void CoModFrame::save3DConfig() {
+void GameFrame::save3DConfig() {
     shared_ptr<UrbanBlockGame> ubg = dynamic_pointer_cast<UrbanBlockGame>(gameplay->getGame());
     auto invariants = ubg->getInvariants();
     shared_ptr<Building3DInvariant> binv = dynamic_pointer_cast<Building3DInvariant>(invariants['b']);

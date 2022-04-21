@@ -3,11 +3,11 @@
 
 #include <map>
 #include <memory>
-#include "CoModInvariant.h"
+#include "UbranBlockGameInvariant.h"
 #include "../GroupOfCells.h"
 #include "../UrbanBlockGame.h"
 
-class GreenSpaceInvariant: public CoModInvariant {
+class GreenSpaceInvariant: public UbranBlockGameInvariant {
 public:
     explicit GreenSpaceInvariant(const std::shared_ptr<UrbanBlockGame> &g);
 

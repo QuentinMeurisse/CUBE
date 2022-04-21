@@ -2,7 +2,7 @@
 #define CUBE_BUILDINGINVARIANT_H
 
 
-#include "CoModInvariant.h"
+#include "UbranBlockGameInvariant.h"
 #include "../GroupOfCells.h"
 #include "../UrbanBlockGame.h"
 
@@ -10,7 +10,7 @@
 #include <memory>
 #include <optional>
 
-class BuildingInvariant: public CoModInvariant {
+class BuildingInvariant: public UbranBlockGameInvariant {
 public:
     explicit BuildingInvariant(const std::shared_ptr<UrbanBlockGame> &g);
 };

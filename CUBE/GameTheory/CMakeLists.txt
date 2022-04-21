@@ -23,10 +23,10 @@ add_library(${LIB}
         Players/NumGreenSpacesPlayer.cpp Players/NumGreenSpacesPlayer.h
         Players/GreenSpaceRatePlayer.cpp Players/GreenSpaceRatePlayer.h 
         TwoRadiusConstraint.cpp TwoRadiusConstraint.h
-        GUI/CoModFrame.cpp GUI/CoModFrame.h
-        GUI/CoModWorker.cpp GUI/CoModWorker.h
+        GUI/GameFrame.cpp GUI/GameFrame.h
+        GUI/GameWorker.cpp GUI/GameWorker.h
         GUI/GUIListener.cpp GUI/GUIListener.h
-        Invariants/CoModInvariant.cpp Invariants/CoModInvariant.h
+        Invariants/UbranBlockGameInvariant.cpp Invariants/UbranBlockGameInvariant.h
         ../DataStructures/Segment.cpp ../DataStructures/Segment.h
         ../DataStructures/RedBlackTree.h
         MultiSquareTilling.cpp MultiSquareTilling.h

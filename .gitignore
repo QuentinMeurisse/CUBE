@@ -2,3 +2,9 @@
 CUBE/.idea/
 
 CUBE/cmake-build-debug/
+
+LSCUBE/.idea/
+
+LSCUBE/out/
+
+*.iml

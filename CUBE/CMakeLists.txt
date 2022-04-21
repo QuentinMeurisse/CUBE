@@ -16,10 +16,6 @@ add_subdirectory(lib/nlohmann_json)
 
 add_executable(CUBE main.cpp)
 
-set_target_properties(CUBE PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY_DEBUG ..
-        RUNTIME_OUTPUT_DIRECTORY_RELEASE ..
-        )
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5 COMPONENTS Core REQUIRED)
 get_target_property(QtCore_location Qt5::Core LOCATION)

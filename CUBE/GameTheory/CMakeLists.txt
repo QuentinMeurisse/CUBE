@@ -39,7 +39,7 @@ target_include_directories(${LIB} PUBLIC
         "${PROJECT_SOURCE_DIR}/GameCore")
 
 target_link_libraries(${LIB} PUBLIC GameTheory3D)
-target_link_directories(${LIB} PUBLIC
+target_include_directories(${LIB} PUBLIC
         "${PROJECT_BINARY_DIR}/GameTheory/3D"
         "${PROJECT_SOURCE_DIR}/GameTheory/3D")
 

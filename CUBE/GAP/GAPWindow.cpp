@@ -34,12 +34,11 @@ GAPWindow::GAPWindow(QWidget *parent) : QMainWindow(parent) {
     auto* file_group = new QGroupBox("Files", central_widget);
     load_graph_button = new QPushButton("Load graph", file_group);
     load_graph_button->setToolTip("Load a graph from JSON file");
-    load_graph_line = new QLineEdit("/home/quentin/Documents/GIS/mons-time without "
-                                    "holidays/mons_7h_10h.json", file_group);
+    load_graph_line = new QLineEdit(file_group);
     load_graph_line->setFixedWidth(200);
 
     select_save_dir_button = new QPushButton("Save dir", file_group);
-    select_save_dir_line = new QLineEdit("/home/quentin/Bureau/gap_test", file_group);
+    select_save_dir_line = new QLineEdit(file_group);
     select_save_dir_line->setFixedWidth(200);
 
     auto* file_layout = new QGridLayout;

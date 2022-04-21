@@ -32,4 +32,7 @@ cmake --build .
 ```
 ## Utilisation
 - Exécuter le fichier CUBE générer dans le dossier build.
-- Le dossiers Exemples contient plusieurs fichiers pouvant être utilisé dans CUBE. 
+
+## Exemples
+- Le dossier Exemples contient plusieurs fichiers pouvant être utilisé dans CUBE.
+- Ces fichiers sont regroupé en fonction du module dans lequel ils peuvent être utilisés. 

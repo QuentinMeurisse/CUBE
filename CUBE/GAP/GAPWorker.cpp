@@ -21,8 +21,6 @@ void GAPWorker::process() {
         g.loadJson(config.graph_path, config.weight_key, "color", config.times_key);
 
     emit infoChanged(QString::fromStdString("Load graph from " + config.graph_path));
-    cout << "Number of nodes: " << g.size() << endl;
-    cout << "Number of edges: " << g.numberEdges() << endl;
     vector<uint64_t> red;
     vector<uint64_t> blue;
     //separate buildings from school
@@ -53,8 +51,6 @@ void GAPWorker::process() {
             g.removeNode(red[i]);
         }
     }
-    cout << "Number of nodes: " << g.size() << endl;
-    cout << "Number of edges: " << g.numberEdges() << endl;
 
     string save_json_path = config.save_dir + fs::path::preferred_separator + "gap.json";
     GraphUtility::writeVectorToJson<uint64_t>(save_json_path, "red", red_filtered, false);

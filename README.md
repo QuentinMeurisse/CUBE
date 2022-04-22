@@ -22,7 +22,8 @@
 git clone --recurse-submodules https://github.com/QuentinMeurisse/CUBE
 ```
 
-## Compilation
+## Compilation 
+### (Sous linux) 
 
 ```bash
 cd CUBE/CUBE
@@ -35,4 +36,4 @@ cmake --build .
 
 ## Exemples
 - Le dossier Exemples contient plusieurs fichiers pouvant être utilisé dans CUBE.
-- Ces fichiers sont regroupé en fonction du module dans lequel ils peuvent être utilisés. 
+- Ces fichiers sont regroupés en fonction du module dans lequel ils peuvent être utilisés. 

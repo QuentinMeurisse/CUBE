@@ -1,7 +1,7 @@
 # LSCUBE
 
 ## Prérequis 
-- Une version récente de Java https://java.com/en/download/
+- Une version récente de [Java](https://java.com/en/download/)
 
 ## Utilisation
 - Exécuter le fichier LSCUBE.jar.
@@ -12,7 +12,7 @@
 ## Prérequis
 - Un compilateur C++ récent.
 - Boost
-- Openmesh https://www.graphics.rwth-aachen.de/software/openmesh/
+- [Openmesh](https://www.graphics.rwth-aachen.de/software/openmesh/)
 - Qt5 
 
 ## Installation

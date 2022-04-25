@@ -21,7 +21,7 @@
 using namespace std;
 
 GraphControlWindow::GraphControlWindow(QWidget *parent) : QMainWindow(parent) {
-    setWindowTitle("Graph");
+    setWindowTitle("Game Graph");
     resize(1920, 1080);
     auto* centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);

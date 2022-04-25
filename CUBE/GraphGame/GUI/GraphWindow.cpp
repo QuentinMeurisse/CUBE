@@ -15,7 +15,7 @@
 using namespace std;
 
 GraphWindow::GraphWindow(std::shared_ptr<CoordGraph> g, std::shared_ptr<IterativeGameplay> gp, QWidget *parent) : QMainWindow(parent), graph(std::move(g)), gameplay(std::move(gp)){
-    setWindowTitle("Graph");
+    setWindowTitle("Game Graph");
     resize(1920, 1080);
     auto* centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);

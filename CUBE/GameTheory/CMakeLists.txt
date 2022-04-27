@@ -27,8 +27,6 @@ add_library(${LIB}
         GUI/GameWorker.cpp GUI/GameWorker.h
         GUI/GUIListener.cpp GUI/GUIListener.h
         Invariants/UbranBlockGameInvariant.cpp Invariants/UbranBlockGameInvariant.h
-        ../DataStructures/Segment.cpp ../DataStructures/Segment.h
-        ../DataStructures/RedBlackTree.h
         MultiSquareTilling.cpp MultiSquareTilling.h
         HexagonalTiling.cpp HexagonalTiling.h
         TriangularTiling.cpp TriangularTiling.h)

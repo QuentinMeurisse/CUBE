@@ -13,7 +13,7 @@
 - Un compilateur C++ récent (gcc 9 et g++ 9 sous Linux)
 - [Boost](https://www.boost.org/)
 - [OpenMesh](https://www.graphics.rwth-aachen.de/software/openmesh/download/)
-- [Qt(5](https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
+- [Qt5](https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
 
 
 ## Installation d'OpenMesh

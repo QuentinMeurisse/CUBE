@@ -1,6 +1,3 @@
-[submodule "CUBE/lib/fmt"]
-	path = CUBE/lib/fmt
-	url = https://github.com/fmtlib/fmt.git
 [submodule "CUBE/lib/nlohmann_json"]
 	path = CUBE/lib/nlohmann_json
 	url = https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent.git

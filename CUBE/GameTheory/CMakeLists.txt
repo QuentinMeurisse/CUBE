@@ -50,7 +50,7 @@ target_include_directories(${LIB} PUBLIC
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_module)
 find_package(OpenMesh REQUIRED)
-include_directories(lib/OpenMesh)
+include_directories(${OpenMesh_INCLUDE_DIRS})
 
 target_link_libraries(${LIB} PUBLIC ${OpenMesh_LIBS} OpenMeshCore OpenMeshTools)
 

@@ -24,9 +24,6 @@ target_include_directories(${LIB} PUBLIC
         "${PROJECT_BINARY_DIR}/GameCore"
         "${PROJECT_SOURCE_DIR}/GameCore")
 
-target_link_libraries(${LIB} PUBLIC "/usr/local/lib/libOpenMeshCore.so")
-target_link_libraries(${LIB} PUBLIC "/usr/local/lib/libOpenMeshTools.so")
-
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 target_link_libraries(${LIB} PUBLIC Qt5::Widgets)
 find_package(Qt5 COMPONENTS Core REQUIRED)

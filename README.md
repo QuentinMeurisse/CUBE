@@ -10,17 +10,29 @@
 # CUBE
 
 ## Prérequis
-- Un compilateur C++ récent.
-- Boost
-- [Openmesh](https://www.graphics.rwth-aachen.de/software/openmesh/)
-- Qt5 
+- Un compilateur C++ récent (gcc 9 et g++ 9 sous Linux)
+- [Boost](https://www.boost.org/)
+- [OpenMesh](https://www.graphics.rwth-aachen.de/software/openmesh/download/)
+- [Qt(5](https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
 
-## Installation
- Ce projet fait appel à des sous-modules. Ainsi un simple git clone ne suffit pas pour installer toutes les dépendances. La commande suivante permet un téléchargement de toutes les dépendances : 
 
+## Installation d'OpenMesh
+### (Sous Linux)
+- Télécharger une version d'OpenMesh [ici](https://www.graphics.rwth-aachen.de/software/openmesh/download/).
+- Extraire le dossier contenu dans l'archive téléchargée.
+- Dans le dossier extrait, entrer les commandes suivantes : 
 ```bash
-git clone --recurse-submodules https://github.com/QuentinMeurisse/CUBE
+mkdir build && cd build
+cmake ..
+sudo make install
 ```
+
+## Installation de CUBE
+- Télécharger le ZIP ou entrer la commande suivante : 
+ ```bash
+git clone https://github.com/QuentinMeurisse/CUBE
+```
+- Cette commande installe également les librairies [fmt](https://github.com/fmtlib/fmt) et [nlohmann_json](https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent) 
 
 ## Compilation 
 ### (Sous linux) 
@@ -29,7 +41,7 @@ git clone --recurse-submodules https://github.com/QuentinMeurisse/CUBE
 cd CUBE/CUBE
 mkdir build && cd build
 cmake ..
-cmake --build .
+make
 ```
 ## Utilisation
 - Exécuter le fichier CUBE générer dans le dossier build.

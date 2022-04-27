@@ -1,3 +1,0 @@
-[submodule "CUBE/lib/nlohmann_json"]
-	path = CUBE/lib/nlohmann_json
-	url = https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent.git

@@ -53,7 +53,7 @@ void GAPWorker::process() {
     }
 
     string save_json_path = config.save_dir + fs::path::preferred_separator + "gap.json";
-    GraphUtility::writeVectorToJson<uint64_t>(save_json_path, "red", red_filtered, false);
+    GraphUtility::writeVectorToJson<uint64_t>(save_json_path, "red", red_filtered, true);
     GraphUtility::writeVectorToJson<uint64_t>(save_json_path, "blue", blue, false);
     GraphUtility::writeVectorToJson<int>(save_json_path, "num_people", num_people_filtered, false);
 

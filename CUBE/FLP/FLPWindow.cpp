@@ -104,9 +104,9 @@ FLPWindow::FLPWindow(QWidget *parent) : QMainWindow(parent) {
     slowAct = new QAction(tr("&Slow mode"), this);
     slowAct->setCheckable(true);
     slowAct->setStatusTip("Wait 200 ms between each step of the search");
-    addCustomersAct = new QAction(tr("Add customers"), this);
+    addCustomersAct = new QAction(tr("Add homes"), this);
     addCustomersAct->setCheckable(true);
-    addFacilitiesAct = new QAction(tr("Add facilities"), this);
+    addFacilitiesAct = new QAction(tr("Add schools"), this);
     addFacilitiesAct->setCheckable(true);
     settingsMenu = menuBar()->addMenu(tr("&Settings"));
     settingsMenu->addAction(slowAct);

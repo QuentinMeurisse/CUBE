@@ -32,13 +32,13 @@ FLPSettingsWindow::FLPSettingsWindow(QWidget *parent) : QMainWindow(parent) {
     mutationRateLine->setFixedSize(line_width, line_height);
 
 
-    facilitiesCostCheck = new QCheckBox("Use default facilities cost", centralWidget);
+    facilitiesCostCheck = new QCheckBox("Use default school cost", centralWidget);
     facilitiesCostLine = new QLineEdit("5", centralWidget);
     facilitiesCostLine->setFixedSize(line_width, line_height);
     facilitiesCostLine->setEnabled(false);
     connect(facilitiesCostCheck, SIGNAL(stateChanged(int)), this, SLOT(activateDefaultFacilitiesCost(int)));
 
-    transportCostCheck = new QCheckBox("Use default transport cost", centralWidget);
+    transportCostCheck = new QCheckBox("Use default moving cost", centralWidget);
 
     useConstraintCheck = new QCheckBox("Use distance constraint", centralWidget);
     auto* maxDistLabel = new QLabel("Maximum distance", centralWidget);

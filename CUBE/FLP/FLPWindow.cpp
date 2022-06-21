@@ -332,8 +332,8 @@ void FLPWindow::saveCosts() {
         messageBox.exec();
     } else{
         nlohmann::json json;
-        json["facilities"] = facilitiesCost;
-        json["transport"] = transportCost;
+        json["schools"] = facilitiesCost;
+        json["moving"] = transportCost;
         ofstream writer;
         writer.open(file_name.toStdString(), ios::out);
         writer << json.dump(4);
@@ -367,8 +367,8 @@ void FLPWindow::loadCosts() {
             reader >> json;
             reader.close();
             try {
-                transportCost = json["transport"].get<vector<vector<double>>>();
-                facilitiesCost = json["facilities"].get<vector<double>>();
+                transportCost = json["moving"].get<vector<vector<double>>>();
+                facilitiesCost = json["schools"].get<vector<double>>();
                 costLoadedLabel->setText("Cost loaded");
                 costLoadedLabel->setStyleSheet("QLabel {color : darkGreen; }");
             }catch (exception const& e){
